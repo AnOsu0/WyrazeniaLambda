@@ -1,4 +1,4 @@
-package lesson;
+package lesson1;
 
 import java.util.Random;
 import java.util.function.Consumer;
@@ -10,13 +10,15 @@ class Functions {
     public static void main(String[] args) {
         String original = "   WIELKI NAPIS   ";
         Function<String,String> func = s -> s.toLowerCase().trim();
+        String changed = func.apply(original);
+        System.out.println(changed);
+
         Consumer<String> cons = s -> {
             for (int i = 0; i < 3; i++) {
                 System.out.println(s);
             }
         };
-        String changed = func.apply(original);
-        System.out.println(changed);
+
         cons.accept(original);
 
         int personAge = 20;
